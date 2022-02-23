@@ -19,6 +19,8 @@ const Home = () => {
   return (
     <MyCard
       txtcolor="black"
+      bodybg="primary"
+      txtcolor="white"
       header="BadBank Landing Page"
       title="Welcome to the bank"
       text="You can use this bank at your own risk!"

@@ -4,7 +4,7 @@ import { Outlet, Link } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div>
+    <div className="">
       <MyNav />
       {/* allow components to render as children of app route */}
       <Outlet />

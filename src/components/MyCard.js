@@ -5,13 +5,14 @@ const MyCard = (props) => {
   const classes = () => {
     const bg = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
     const txt = props.txtcolor ? ' text-' + props.txtcolor : ' text-white';
+    return `${bg} ${txt}`;
   };
   return (
-    <div>
+    <div className="py-3">
       <Container>
         <Card className={`h-75 mx-auto text-center ${classes()}`}>
           <Card.Header>{props.header}</Card.Header>
-          <Card.Body>
+          <Card.Body className={`bg-${props.bodybg}`}>
             {props.title && <Card.Title>{props.title}</Card.Title>}
             {props.text && <Card.Text>{props.text}</Card.Text>}
             {/* <Button variant="primary">Go somewhere</Button> */}
