@@ -19,14 +19,7 @@ import UserContext from './Contexts/UserContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const val = {
-  users: [
-    {
-      name: 'dylan',
-      email: 'dylansicard@gmail.com',
-      password: 'password',
-      balance: 100,
-    },
-  ],
+  users: [],
 };
 
 // routes are all defined below, then used throughout app with Links
