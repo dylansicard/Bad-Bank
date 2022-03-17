@@ -11,7 +11,9 @@ const MyCard = (props) => {
     <div className="py-3">
       <Container>
         <Card className={`h-75 mx-auto text-center ${classes()}`}>
-          <Card.Header>{props.header}</Card.Header>
+          <Card.Header className={`text-${props.headerText}`}>
+            {props.header}
+          </Card.Header>
           <Card.Body className={`bg-${props.bodybg}`}>
             {props.title && <Card.Title>{props.title}</Card.Title>}
             {props.text && <Card.Text>{props.text}</Card.Text>}

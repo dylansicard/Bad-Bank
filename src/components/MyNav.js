@@ -38,10 +38,6 @@ const MyNav = () => {
                 <Nav.Link>All Data</Nav.Link>
               </LinkContainer>
 
-              <LinkContainer to="/Balance">
-                <Nav.Link>Balance</Nav.Link>
-              </LinkContainer>
-
               <LinkContainer to="/CreateAccount">
                 <Nav.Link>Create Account</Nav.Link>
               </LinkContainer>
@@ -57,7 +53,7 @@ const MyNav = () => {
               </LinkContainer>
 
               <LinkContainer to="/Login">
-                <Nav.Link>Login</Nav.Link>
+                <Nav.Link active={false}>Login</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>

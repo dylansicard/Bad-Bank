@@ -18,9 +18,8 @@ import bank from '../img/bank.png';
 const Home = () => {
   return (
     <MyCard
-      txtcolor="black"
+      txtcolor="dark"
       bodybg="primary"
-      txtcolor="white"
       header="BadBank Landing Page"
       title="Welcome to the bank"
       text="You can use this bank at your own risk!"

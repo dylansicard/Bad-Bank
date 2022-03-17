@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import './index.css';
+
 // routes
 import App from './components/App';
 import Home from './routes/Home';
@@ -20,6 +22,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const val = {
   users: [],
+  currentUser: {},
 };
 
 // routes are all defined below, then used throughout app with Links

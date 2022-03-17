@@ -15,18 +15,39 @@ const CreateAccount = () => {
   const validate = (field, label) => {
     if (!field) {
       setStatus('Error: ' + label);
-      setTimeout(() => setStatus(''), 1500);
+      setTimeout(() => setStatus(''), 10000);
       return false;
     }
     return true;
   };
 
+  const enableSubmit = (name, email, password) => {
+    if (name.length && email.length && password.length) {
+      return false;
+    }
+
+    return true;
+  };
+
   // ensure that all fields at least have something entered, add user to User context
-  const handleCreate = () => {
-    console.log(name, email, password);
-    if (!validate(name, 'name')) return;
-    if (!validate(name, 'name')) return;
-    if (!validate(name, 'name')) return;
+  const handleCreate = (e) => {
+    e.preventDefault();
+    // if (!validate(name, 'You must enter your name')) return;
+    // if (!validate(email, 'You must enter your email')) return;
+    // if (!validate(password, 'You must enter a password')) return;
+    if (name.length < 2) {
+      setStatus('Error: You must enter a valid name');
+      return;
+    }
+    if (!email) {
+      setStatus('Error: You must enter a valid email');
+      return;
+    }
+    if (password.length < 8) {
+      setStatus('Error: Your password must be atleast 8 characters long!');
+      return;
+    }
+
     ctx.users.push({ name, email, password, balance: 100 });
     setShow(false);
   };
@@ -41,16 +62,13 @@ const CreateAccount = () => {
 
   return (
     <div>
-      {/* <h1>
-        Create Account <br />
-        {JSON.stringify(ctx)}
-      </h1> */}
       <MyCard
         bgcolor="primary"
         header="Create Account"
         status={status}
         bodybg="dark"
         body={
+          // ternary expression determining whether to show create user form or account creation success message
           show ? (
             <Form className="my-3 py-3">
               {/* name */}
@@ -84,8 +102,16 @@ const CreateAccount = () => {
                   placeholder="Password"
                   onChange={(e) => setPassword(e.currentTarget.value)}
                 />
+                <Form.Text className="text-muted">
+                  Your password must be atleast 8 characters long.
+                </Form.Text>
               </Form.Group>
-              <Button variant="primary" type="submit" onClick={handleCreate}>
+              <Button
+                variant="primary"
+                type="submit"
+                onClick={handleCreate}
+                disabled={enableSubmit(name, email, password)}
+              >
                 Create Account
               </Button>
             </Form>
